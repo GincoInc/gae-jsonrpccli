@@ -58,6 +58,10 @@ type RPCError struct {
 	Data    interface{} `json:"data"`
 }
 
+func (err RPCError) Error() string {
+	return fmt.Sprintf("Error %d (%s)", err.Code, err.Message)
+}
+
 // RPCClient sends jsonrpc requests over http to the provided rpc backend.
 // RPCClient is created using the factory function NewRPCClient().
 type RPCClient struct {
