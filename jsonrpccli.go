@@ -1,5 +1,5 @@
-// Package jsonrpc provides an jsonrpc 2.0 client that sends jsonrpc requests and receives jsonrpc responses using http.
-package jsonrpc
+// Package jsonrpccli provides an jsonrpc 2.0 client that sends jsonrpc requests and receives jsonrpc responses using http.
+package jsonrpccli
 
 import (
 	"bytes"
