@@ -3,12 +3,15 @@ package jsonrpccli
 
 import (
 	"bytes"
+	"context"
 	"encoding/base64"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"net/http"
 	"sync"
+
+	"google.golang.org/appengine/urlfetch"
 )
 
 // RPCRequest represents a jsonrpc request object.
@@ -75,10 +78,10 @@ type RPCClient struct {
 
 // NewRPCClient returns a new RPCClient instance with default configuration (no custom headers, default http.Client, autoincrement ids).
 // Endpoint is the rpc-service url to which the rpc requests are sent.
-func NewRPCClient(endpoint string) *RPCClient {
+func NewRPCClient(ctx context.Context, endpoint string) *RPCClient {
 	return &RPCClient{
 		endpoint:        endpoint,
-		httpClient:      http.DefaultClient,
+		httpClient:      urlfetch.Client(ctx),
 		autoIncrementID: true,
 		nextID:          0,
 		customHeaders:   make(map[string]string),
