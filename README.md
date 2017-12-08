@@ -19,7 +19,7 @@ Supports:
 ## Installation
 
 ```sh
-go get -u github.com/ybbus/jsonrpc
+go get -u github.com/GuiltyMorishita/jsonrpccli
 ```
 
 ## Getting started
