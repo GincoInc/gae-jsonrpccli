@@ -19,7 +19,7 @@ Supports:
 ## Installation
 
 ```sh
-go get -u github.com/GuiltyMorishita/jsonrpccli
+go get -u github.com/Ginco/jsonrpccli
 ```
 
 ## Getting started
